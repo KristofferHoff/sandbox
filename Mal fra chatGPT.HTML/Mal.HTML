@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="En enkel mal for en HTML-nettside med grunnleggende strukturer, stilark og JavaScript.">
+    <title>Min Enkle Nettside</title>
+    
+    <!-- Link til CSS-fil -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Litt innebygd CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Velkommen til Min Nettside</h1>
+        </div>
+    </header>
+
+    <!-- Navigasjonsmeny -->
+    <nav>
+        <ul class="container">
+            <li><a href="#hjem">Hjem</a></li>
+            <li><a href="#om-oss">Om Oss</a></li>
+            <li><a href="#tjenester">Tjenester</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hovedinnhold -->
+    <section id="hjem" class="container">
+        <h2>Hjem</h2>
+        <p>Dette er hjemmesiden til min enkle nettside. Du kan tilpasse innholdet her for å passe ditt formål.</p>
+    </section>
+
+    <section id="om-oss" class="container">
+        <h2>Om Oss</h2>
+        <p>Her kan du skrive litt om deg selv eller din bedrift. Dette avsnittet kan utvides med flere detaljer.</p>
+    </section>
+
+    <section id="tjenester" class="container">
+        <h2>Tjenester</h2>
+        <p>Beskriv de tjenestene du tilbyr. Dette kan inkludere priser, beskrivelser og mer.</p>
+    </section>
+
+    <section id="kontakt" class="container">
+        <h2>Kontakt</h2>
+        <p>Her kan du legge inn en kontaktskjema eller kontaktinformasjon.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Min Nettside. Alle rettigheter reservert.</p>
+    </footer>
+
+    <!-- Link til JavaScript-fil -->
+    <script src="script.js"></script>
+    
+    <!-- Litt innebygd JavaScript -->
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                window.scrollTo({
+                    top: section.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
